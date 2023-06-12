@@ -16,4 +16,5 @@ urlpatterns = [
     path("producto/create/", staff_member_required(views.ProductoCreate.as_view()), name="producto_create"),
     path("producto/delete/<int:pk>", staff_member_required(views.ProductoDelete.as_view()), name="producto_delete"),
     path("producto/update/<int:pk>", staff_member_required(views.ProductoUpdate.as_view()), name="producto_update"),
+    path("categoria/filter/<int:pk>", views.ProductoCategoriaFilter.as_view(), name="categoria_filter"),
 ]

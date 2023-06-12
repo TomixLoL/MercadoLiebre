@@ -12,7 +12,7 @@
         </form>
     </div>
 {% endblock search %}
- 
+
 {% block table_header %}
     <tr>
         <th>Nombre de categoría</th>
@@ -21,23 +21,29 @@
         <th></th>
     </tr>
 {% endblock table_header %}
- 
+
 {% block table_body %}
     {% for categoria in object_list %}
         <tr>
             <td>{{ categoria.nombre }}</td>
             <td>
                 <a href="{% url 'producto:productocategoria_detail' categoria.id %}"
-                   class="btn btn-secondary btn-sm">Ver detalle</a>
+                    class="btn btn-secondary btn-sm">Ver detalles</a>
             </td>
             <td>
+                <a href="{% url 'producto:categoria_filter' categoria.id %}"
+                    class="btn btn-outline-warning btn-sm">Ver todos los productos</a>
+            </td>
+            {% if user.is_staff %}
+            <td>
                 <a href="{% url 'producto:productocategoria_update' categoria.id %}"
-                   class="btn btn-primary btn-sm">Actualizar</a>
+                    class="btn btn-primary btn-sm">Actualizar</a>
             </td>
             <td>
                 <a href="{% url 'producto:productocategoria_delete' categoria.id %}"
-                   class="btn btn-danger btn-sm">Eliminar</a>
+                    class="btn btn-danger btn-sm">Eliminar</a>
             </td>
+            {% endif %}
         </tr>
     {% endfor %}
 {% endblock table_body %}

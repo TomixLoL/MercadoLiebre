@@ -11,7 +11,7 @@
         </form>
     </div>
 {% endblock search %}
- 
+
 {% block table_header %}
     <tr>
         <th>Producto</th>
@@ -29,16 +29,18 @@
             <td>${{ producto.precio }}</td>
             <td>
                 <a href="{% url 'producto:producto_detail' producto.id %}"
-                   class="btn btn-secondary btn-sm">Ver detalle</a>
+                    class="btn btn-secondary btn-sm">Ver detalles</a>
             </td>
+            {% if user.is_staff %}
             <td>
                 <a href="{% url 'producto:producto_update' producto.id %}"
-                   class="btn btn-primary btn-sm">Actualizar</a>
+                    class="btn btn-primary btn-sm">Actualizar</a>
             </td>
             <td>
                 <a href="{% url 'producto:producto_delete' producto.id %}"
-                   class="btn btn-danger btn-sm" >Eliminar</a>
+                    class="btn btn-danger btn-sm" >Eliminar</a>
             </td>
+            {% endif %}
         </tr>
     {% endfor %}
 {% endblock table_body %}

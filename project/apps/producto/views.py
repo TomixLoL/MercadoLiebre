@@ -41,6 +41,15 @@ class ProductoCategoriaUpdate(UpdateView):
     form_class = forms.ProductoCategoriaForm
 
 
+class ProductoCategoriaFilter(ListView):
+    model = models.Producto
+    template_name = "producto_list.html"
+
+    def get_queryset(self):
+        categoria_id = self.kwargs["pk"]
+        return models.Producto.objects.filter(categoria_id=categoria_id)
+
+
 # *** Producto
 
 
