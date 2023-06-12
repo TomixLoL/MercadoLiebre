@@ -1,0 +1,19 @@
+{% extends 'venta/index.html' %}
+
+{% block title %}
+    Venta
+{% endblock title %}
+
+{% block content_venta %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+    {% url 'venta:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+
+{% endblock content_venta %}

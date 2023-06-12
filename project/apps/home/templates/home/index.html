@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <body>
+        <main>
+        <!-- Carrousel -->
+        {% include 'home/carrousel.html' %}
+        
+        <!-- Productos -->
+        {% include 'home/catalog.html' %}
+        </main>  
+        
+        <!-- Footer -->
+        {% include 'home/footer.html' %}
+        
+    </body>
+
+{% endblock content %}

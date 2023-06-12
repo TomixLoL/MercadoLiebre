@@ -1,0 +1,16 @@
+{% extends 'producto/index.html' %}
+
+{% block title %}
+    Detalle de Categorías de Productos
+{% endblock title %}
+
+{% block content_producto %}
+    <ul>
+        <li>Nombre: {{ object.nombre }}</li>
+        <li>Detalle: {{ object.descripcion }}</li>
+    </ul>
+
+    {% url 'producto:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+ 
+{% endblock content_producto %}

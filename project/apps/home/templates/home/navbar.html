@@ -1,0 +1,35 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-1">
+    <div class="container fluid">
+        <a class="navbar-brand">La Caja de Pandora</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center ">
+                <li class="nav-item"><a class="nav-link {% if request.path == "/" %}active{% endif %}" aria-current="page" href="{% url 'home:index' %}">Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/producto/" %}active{% endif %}" href="{% url 'producto:index' %}">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/venta/" %}active{% endif %}" href="{% url 'venta:index' %}">Ventas</a></li>
+                    <li class="nav-item"><a class="nav-link text-bg-light">{{ user.username }}</a></li>
+                    {% if user.vendedor.avatar.url  %}
+                        <li class="nav-item"><img src="{{ user.vendedor.avatar.url }}" alt="avatar" class="img-fluid rounded-circle" style="height: 30px;" ></li>
+                    {% else %}
+                        <li class="nav-item"><img src="{% static 'venta/avatares.png' %}" alt="avatar" class="img-fluid rounded-circle" style="height: 30px;" ></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:logout' %}">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %}active{% endif %}" href="{% url 'home:about' %}">¿Quiénes somos?</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

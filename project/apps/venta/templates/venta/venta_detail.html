@@ -1,0 +1,20 @@
+{% extends 'venta/index.html' %}
+
+{% block title %}
+    Detalle de Ventas
+{% endblock title %}
+
+{% block content_venta %}
+    <ul>
+        <li>Vendedor: {{ object.vendedor }}</li>
+        <li>Producto: {{ object.producto.nombre }}</li>
+        <li>Precio unitario: {{ object.producto.precio }}</li>
+        <li>Cantidad comprada: {{ object.cantidad }} {{ object.producto.unidad_de_medida }}</li>
+        <li>Precio total: ${{ object.precio_total }}</li>
+        <li>Fecha de venta: {{ object.fecha_venta }}</li>
+    </ul>
+
+    {% url 'venta:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+
+{% endblock content_venta %}

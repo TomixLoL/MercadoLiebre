@@ -1,0 +1,47 @@
+{
+    // PYTHON
+    "python.analysis.pylanceLspClientEnabled": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.gotoDefinitionInStringLiteral": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.terminal.focusAfterLaunch": true,
+    // VSCODE
+    "editor.formatOnSave": false,
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".git": false,
+        "**/__pycache__": true,
+        "**.git": true
+    },
+    "files.autoSave": "onFocusChange",
+    "workbench.tree.indent": 15,
+    // *************
+    // EXTENSIONES
+    // *************
+    // BLACK
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "editor.formatOnType": true,
+        },
+    },
+    "black-formatter.args": [
+        "--line-length=150"
+    ],
+    // ISORT
+    "isort.args": [
+        "--profile",
+        "black",
+    ],
+    // CODEIUM
+    "codeium.enableCodeLens": false,
+    "explorerExclude.backup": {},
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="carrito.js"></script>
+    <title>carrito</title>
+</head>
+<body>
+    <header>
+        <div>
+            
+            <img class="logo" src="../img/mercado-liebre.png" alt="logo">
+            <br>
+            <a class="product-header" href="../index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYtJREFUSEu1lfExBkEMxd9XASqgA1RACVSAClABKkAFqIAO0AEd6AAVML+bvJmIu7Nn7ss/d7fZzUte3uYWWrItlhxfUwB2Jd1EQqeSHlqSawHYknQpCYBsT5IuJPEctDGADUlnkg7j9Kek83jnuRLvtwH01ofSB7Aq6TgF87n9RAt7TiIB+wG9lvSRgSqADxEAuwtq1uMbOo4kOVuqJPBB+AluoG4pA7xI2oyNz7HR/AKcabkKWpwt/cG/E+eJtV0BvlJpBEYpbLRRFUGgD8vZAkC/shC65HMFGcBB+xoILaw7W+hiDUMIbn4TgDOFktxAquFO7KUKkSz73mOtGcAxoIRemCoLwX6zYSYmA2T18W4hPOaMJc0CgFTpA/Yj4FwAWRwoDnVZ0rNUMDRiaPr9UJPzRat81+8KUO/BqySG5K9xXW/sEJABhgYicu1saNjVQVaB1noGou/B6LDLgeogyz6C5IFIk5vHdc22DjL760DspbPlj+aDKMTcQuFsv8y/FDXqn1LBv4C+AQl/WBnafVLXAAAAAElFTkSuQmCC"/>Todos los productos</a>
+        </div>
+        <a class="product-cart" href="carrito.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvd1M8xREEQBvDfRoAMiAARCAER4MqBEIiAC1dEgAyEQARkgAioT3lbr3hvZ97WbtWWPs709Penu2dkzjGac33/C+BzhnY9YTP12hbNEuADy78BGgEXOMYt9geqOsF5+21Xk1fxgnesDAR4xBYOcNOnIOfxcL2dWAEUS95+8kIsBHvHtJH6gJ2K4klJ3h2esdG86duDTjYFoFiyhzOclgByf4/tSvbttIxnLP6OSZucCboeAJDRzASO2ZcAcp9GLWENrwPAxqmlv6jxNXbtzgMgOxE/o6Im/hAuKWjGL2ObBSrFVAClohPvaxSkwCUOcYWjVsW+8+omN4ntn7bvB+4kuzAKpu5DrYLFBfgCoYYtGZGfX0sAAAAASUVORK5CYII="/>Carrito de compras</a>
+        <p class="Opiniones"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQpJREFUSEvVlc8RATEYxX86oAI6QAXogA64cqATLpypgA7oABWgAx0wbycxEdmxWXaGnDbZL+/Pt8nbEgWPUsH4pBH0gTHQyCjgAMyAlV/vE5SBbQSwjyeiDnC1L3wCFdSBCzABND+/cVEzguSgavY0QwQCnBpwteahImOb5F6CRDIAltrnOrDqe8AmI6hf1gXWrguX4GaqKznUWyK162QmCXaI4NOja4X+DsEcGAILYGTsh9Zsm6Id2A1uS0NruQkKdxB7YqNb9FMEhd8De5OPNjC/edGURXtALoJZ9PRxIhovQCWw0lTPD/VpURGB/VIq8Hba/2AHtHKiC1gOkoh2x6fB9lbP/xPcAY1ZQRmG+jOGAAAAAElFTkSuQmCC"/>Todas las opiniones</p>
+        <nav class="header-nav">
+        <a href="../registro.html"><i class='bi bi-user-plus' ></i>Crea tu Cuenta</a>
+        <br>
+        <button href="" data-bs-toggle="modal" data-bs-target="#dialogo1"><i class='bx bx-user' ></i>Ingresar</button>
+        </nav>
+    
+        <div>
+        <div class="modal fade" id="dialogo1">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <form action=""  class="ingreso">
+                <div>
+                    <img src="../img/mercado-liebre.png" alt="">
+                    <h1>Ingresar</h1>
+                </div>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <button type="button">Ingresar</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <main>
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Elementos generados a partir del JSON -->
+                    <main id="items" class="col-sm-8 row"></main>
+                    <!-- Carrito -->
+                    <aside class="col-sm-4">
+                        <h2>Carrito</h2>
+                        <!-- Elementos del carrito -->
+                        <ul id="carrito" class="list-group"></ul>
+                        <hr>
+                        <!-- Precio total -->
+                        <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+    <Footer class="footer-nav">
+        <hr>
+        <div class="row">
+        <div class="col-4">
+            <h2>Seguinos</h2>
+            <ul>
+            <li><a href=""><i class='bx bxl-facebook'></i>Facebook</a></li>
+            <li><a href=""><i class='bx bxl-instagram' ></i>Instagram</a></li>
+            <li><a href=""><i class='bx bxl-linkedin' ></i>linkedin</a></li>
+            <li><a href=""><i class='bx bxl-youtube' ></i>YouTube</a></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h2>Otros Servicios</h2>
+            <ul>
+            <li><a href="">MercadoLieble Pago</a></li>
+            <li><a href="">MercadoLiebre Shops</a></li>
+            <li><a href="">Liebre Envios</a></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h2>Trabaja con nosotros</h2>
+            <div>
+            <ul>
+                <li>
+                <input type="text" name="destinatario" placeholder="Ingresa tu email">
+                <button type="button" class="btn btn-primary">Enviar</button>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+</body>
+</html>

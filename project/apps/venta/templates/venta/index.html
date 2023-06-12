@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <h1 class="shadow-lg text-center">App Venta</h1>
+    <div class="container mt-lg-3">
+        <h3 class="pb-lg-3">
+
+            {% block title %}
+                Venta de Productos
+            {% endblock title %}
+        </h3>
+
+        {% block content_venta %}
+            <div class="d-grid gap-3">
+                {% if user.is_staff %}
+                    <a href="{% url 'venta:venta_create' %}" class="btn btn-primary">Crear</a>
+                {% endif %}
+                <a href="{% url 'venta:venta_list' %}" 
+                   class="btn btn-primary">Listar</a>
+                <br>
+            </div>
+        {% endblock content_venta %}
+    </div>
+{% endblock content %}

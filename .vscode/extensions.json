@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "visualstudioexptteam.vscodeintellicode-completions",
+        "almahdi.code-django",
+        "mhutchie.git-graph",
+        "qwtel.sqlite-viewer",
+        "pkief.material-icon-theme",
+        "aaron-bond.better-comments",
+        "torresgol10.bootstrap-class-autocomplete",
+    ]
+}

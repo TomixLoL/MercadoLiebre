@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <div class="container mt-lg-5">
+        <h3 class="pb-lg-3">
+
+            {% block title %}
+                Categorías de Productos
+            {% endblock title %}
+        </h3>
+
+        {% block content_producto %}
+            <div class="d-grid gap-3">
+                {% if user.is_staff %}
+                    <a href="{% url 'producto:productocategoria_create' %}"
+                    class="btn btn-primary">Crear</a>
+                {% endif %}
+                <a href="{% url 'producto:productocategoria_list' %}"
+                class="btn btn-primary">Listar</a>
+                <br>
+            </div>
+            <h3 class="pb-lg-3">Productos</h3>
+            <div class="d-grid gap-3">
+                {% if user.is_staff %}
+                    <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear</a>
+                {% endif %}
+                <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar</a>
+                <br>
+            </div>
+        {% endblock content_producto %}
+        <div class="d-grid gap-3">
+            <a href="{% url 'home:index' %}" class="btn btn-info">Ir a Inicio</a>
+        </div>
+    </div>
+{% endblock content %}
