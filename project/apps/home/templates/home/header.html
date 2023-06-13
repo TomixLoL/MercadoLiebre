@@ -2,7 +2,10 @@
 
 <header>
     <div>
-        <img class="logo" src= {% static "img/mercado-liebre.png" %} alt="logo">
+        <a href="{% url 'home:index' %}">
+            <img class="logo" src= {% static "img/mercado-liebre.png" %} alt="logo">
+        </a>
+        
         <br>
         <a class="product-header" href="{% url 'producto:index' %}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYtJREFUSEu1lfExBkEMxd9XASqgA1RACVSAClABKkAFqIAO0AEd6AAVML+bvJmIu7Nn7ss/d7fZzUte3uYWWrItlhxfUwB2Jd1EQqeSHlqSawHYknQpCYBsT5IuJPEctDGADUlnkg7j9Kek83jnuRLvtwH01ofSB7Aq6TgF87n9RAt7TiIB+wG9lvSRgSqADxEAuwtq1uMbOo4kOVuqJPBB+AluoG4pA7xI2oyNz7HR/AKcabkKWpwt/cG/E+eJtV0BvlJpBEYpbLRRFUGgD8vZAkC/shC65HMFGcBB+xoILaw7W+hiDUMIbn4TgDOFktxAquFO7KUKkSz73mOtGcAxoIRemCoLwX6zYSYmA2T18W4hPOaMJc0CgFTpA/Yj4FwAWRwoDnVZ0rNUMDRiaPr9UJPzRat81+8KUO/BqySG5K9xXW/sEJABhgYicu1saNjVQVaB1noGou/B6LDLgeogyz6C5IFIk5vHdc22DjL760DspbPlj+aDKMTcQuFsv8y/FDXqn1LBv4C+AQl/WBnafVLXAAAAAElFTkSuQmCC"/>Todos los productos</a>
     </div>
@@ -17,10 +20,11 @@
             {% else %}
                 <img src="{% static 'venta/avatares.png' %}" alt="avatar" style="height: 30px;" />
             {% endif %}
-            <p>
-                <br>
-                <a style="color: rgb(172, 0, 0);" href="{% url 'home:logout' %}">Cerrar sesion</a>
-            </p>
+            <div class="row">
+                <div class="button-container">
+                    <a href="{% url 'home:logout' %}" class="btn btn-danger">Cerrar Sesion</a>
+                </div>
+            </div>
         {% else %}
                 <a href={% url 'home:register' %}><i class='bi bi-user-plus' ></i>Crea tu Cuenta</a>
                 <br>
@@ -31,16 +35,20 @@
                 <h6>{% if messages %}{{ messages }}{% endif %}</h6>
         </h3>
         {% endif %}
-    {% if user.is_staff %}
+        {% if user.is_staff %}
         <div class="row">
-            <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Administración</a>
+            <div class="button-container">
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Administración</a>
+            </div>
         </div>
         <br>
         <div class="row">
-            <a href="{% url 'home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
+            <div class="button-container">
+                <a href="{% url 'home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
+            </div>
         </div>
         <br>
-    {% endif %}
+        {% endif %}
     </nav>
     <div>
     <div class="modal fade" id="dialogo1">
