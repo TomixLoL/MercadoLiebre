@@ -3,7 +3,6 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView
-from venta import models
 
 from . import forms
 
