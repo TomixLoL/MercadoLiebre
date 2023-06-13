@@ -58,11 +58,7 @@ INSTALLED_APPS = [
 
 # * Apps propias
 
-INSTALLED_APPS += [
-    "home",
-    "producto",
-    "venta",
-]
+INSTALLED_APPS += ["home", "producto", "venta", "carrito"]
 
 
 MIDDLEWARE = [
@@ -131,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "es"
 
-TIME_ZONE = "America/Argentina/Mendoza"
+TIME_ZONE = "America/Argentina/Buenos_Aires"
 
 USE_I18N = True
 

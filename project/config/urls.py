@@ -8,6 +8,7 @@ urlpatterns = [
     path("", include(("home.urls", "home"))),
     path("producto/", include(("producto.urls", "producto"))),
     path("venta/", include(("venta.urls", "venta"))),
+    path("carrito/", include(("carrito.urls", "carrito"))),
 ]
 
 #! Este código es válido en un entorno de desarrollo (DEBUG=True). Noo utilizarlo en un entorno de producción.

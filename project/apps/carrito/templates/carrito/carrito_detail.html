@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<h1>Carrito</h1>
+{% if carrito_items %}
+    <ul>
+        {% for item in carrito_items %}
+        <li>
+            {{ item.cantidad }} x {{ item.producto.nombre }}
+            <a href="{% url 'producto:producto_detail' item.producto.id %}"
+                class="btn btn-secondary btn-sm">Ver detalles</a>
+            <a href="{% url 'carrito:carrito_delete' item.id %}"
+                class="btn btn-danger btn-sm">Eliminar</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay productos en el carrito.</p>
+{% endif %}
+{% endblock %}
