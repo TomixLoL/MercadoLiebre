@@ -1,14 +1,13 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
+from producto.models import ProductoCategoria
 
-from . import forms
-
-
-def index(request: HttpRequest) -> HttpResponse:
-    return render(request, "home/index.html")
+from . import forms, models
+from producto import models
 
 
 def register(request: HttpRequest) -> HttpResponse:
@@ -24,3 +23,18 @@ def register(request: HttpRequest) -> HttpResponse:
 
 def about(request: HttpRequest) -> HttpResponse:
     return render(request, "home/about.html")
+
+
+class CategoriaListView(ListView):
+    model = ProductoCategoria
+    template_name = "categorias.html"
+
+
+def index(request):
+    categorias = ProductoCategoria.objects.all()[:4]
+
+    context = {
+        "categorias": categorias,
+    }
+
+    return render(request, "home/index.html", context)

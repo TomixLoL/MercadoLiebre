@@ -8,12 +8,10 @@ header{
     padding-left: 30px;
 }
 
-
 a{
     text-decoration: none;
     color: black;
 }
-
 
 .logo{
     width: 400px;
@@ -150,4 +148,3 @@ form{
     border-right:solid 1px ;
     border-top:solid 1px ;
 }
-

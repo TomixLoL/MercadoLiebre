@@ -15,11 +15,7 @@
     <nav class="header-nav">
         {% if user.is_authenticated %}
             <h3 class="d-flex align-items-center">Bienvenido {{ user.username }}
-                {% if user.vendedor.avatar.url %}
-                    <img src="{{ user.vendedor.avatar.url }}" alt="Avatar" style="height: 30px;" />
-                {% else %}
-                    <img src="{% static 'venta/avatares.png' %}" alt="avatar" style="height: 30px;" />
-                {% endif %}
+                <img src="{% static 'home/img/avatares.png' %}" alt="avatar" style="height: 30px;" />
                 <div class="row">
                     <div class="button-container">
                         <a href="{% url 'home:logout' %}" class="btn btn-danger">Cerrar Sesion</a>

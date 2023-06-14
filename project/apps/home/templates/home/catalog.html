@@ -1,20 +1,43 @@
 {% load static %}
 
-<section class="productos">
-  <h2>Nuestras Ofertas</h2>
-  <div class="contenedor-productos" id="divProducto">
+<head>
+  <style>
+    .categorias-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .categoria-box {
+      margin: 50px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fbbd02;
+      width: calc(33.33% - 20px);
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .categoria-name {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="categorias-container">
+    {% for categoria in categorias %}
+      {% if forloop.counter <= 4 %}  <!-- Limitar a cuatro cuadros en total -->
+        <a href="{% url 'producto:categoria_filter' categoria.id %}" class="categoria-box">
+          <span class="categoria-name">{{ categoria.nombre }}</span>
+        </a>
+      {% endif %}
+    {% empty %}
+      <p>No hay categorías disponibles.</p>
+    {% endfor %}
   </div>
-</section>
-<hr>
-<br>
-<h2 class="productos-destacados">Productos Destacados</h2>
-<section class="productos-2">
-  <div>
-    <img class="producto-2" src= {% static "img/productos/img-tv-samsung-smart.jpg" %} alt="Television">
-    <h3>Samsung Smart TV</h3>
-  </div>
-  <div>
-    <img class="producto-2" src= {% static "img/productos/img-macbook-pro-2019.jpg" %} alt="Macbook">
-    <h3>Macbook Pro 2019</h3>
-  </div>
-</section>
+</body>

@@ -32,8 +32,8 @@
                    class="btn btn-secondary btn-sm">Ver detalles</a>
             </td>
             <td>
-                <a href="{% url 'carrito:carrito_add' producto.id %}" 
-                class="btn btn-outline-success btn-sm">Agregar al carrito</a>
+                <a href="{% url 'carrito:carrito_add' producto.id %}"
+                   class="btn btn-outline-success btn-sm">Agregar al carrito</a>
             </td>
             {% if user.is_staff %}
                 <td>
