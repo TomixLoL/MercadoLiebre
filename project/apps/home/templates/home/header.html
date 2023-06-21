@@ -5,45 +5,54 @@
         <a href="{% url 'home:index' %}">
             <img class="logo" src= {% static "img/mercado-liebre.png" %} alt="logo">
         </a>
-
         <br>
         <a class="product-header" href="{% url 'producto:index' %}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYtJREFUSEu1lfExBkEMxd9XASqgA1RACVSAClABKkAFqIAO0AEd6AAVML+bvJmIu7Nn7ss/d7fZzUte3uYWWrItlhxfUwB2Jd1EQqeSHlqSawHYknQpCYBsT5IuJPEctDGADUlnkg7j9Kek83jnuRLvtwH01ofSB7Aq6TgF87n9RAt7TiIB+wG9lvSRgSqADxEAuwtq1uMbOo4kOVuqJPBB+AluoG4pA7xI2oyNz7HR/AKcabkKWpwt/cG/E+eJtV0BvlJpBEYpbLRRFUGgD8vZAkC/shC65HMFGcBB+xoILaw7W+hiDUMIbn4TgDOFktxAquFO7KUKkSz73mOtGcAxoIRemCoLwX6zYSYmA2T18W4hPOaMJc0CgFTpA/Yj4FwAWRwoDnVZ0rNUMDRiaPr9UJPzRat81+8KUO/BqySG5K9xXW/sEJABhgYicu1saNjVQVaB1noGou/B6LDLgeogyz6C5IFIk5vHdc22DjL760DspbPlj+aDKMTcQuFsv8y/FDXqn1LBv4C+AQl/WBnafVLXAAAAAElFTkSuQmCC"/>Todos los productos</a>
     </div>
     <a class="product-cart" href="{% url 'carrito:carrito_detail' %}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvd1M8xREEQBvDfRoAMiAARCAER4MqBEIiAC1dEgAyEQARkgAioT3lbr3hvZ97WbtWWPs709Penu2dkzjGac33/C+BzhnY9YTP12hbNEuADy78BGgEXOMYt9geqOsF5+21Xk1fxgnesDAR4xBYOcNOnIOfxcL2dWAEUS95+8kIsBHvHtJH6gJ2K4klJ3h2esdG86duDTjYFoFiyhzOclgByf4/tSvbttIxnLP6OSZucCboeAJDRzASO2ZcAcp9GLWENrwPAxqmlv6jxNXbtzgMgOxE/o6Im/hAuKWjGL2ObBSrFVAClohPvaxSkwCUOcYWjVsW+8+omN4ntn7bvB+4kuzAKpu5DrYLFBfgCoYYtGZGfX0sAAAAASUVORK5CYII="/>Carrito de compras</a>
     <br>
-    <a class="About"  href="{% url 'home:about' %}" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQpJREFUSEvVlc8RATEYxX86oAI6QAXogA64cqATLpypgA7oABWgAx0wbycxEdmxWXaGnDbZL+/Pt8nbEgWPUsH4pBH0gTHQyCjgAMyAlV/vE5SBbQSwjyeiDnC1L3wCFdSBCzABND+/cVEzguSgavY0QwQCnBpwteahImOb5F6CRDIAltrnOrDqe8AmI6hf1gXWrguX4GaqKznUWyK162QmCXaI4NOja4X+DsEcGAILYGTsh9Zsm6Id2A1uS0NruQkKdxB7YqNb9FMEhd8De5OPNjC/edGURXtALoJZ9PRxIhovQCWw0lTPD/VpURGB/VIq8Hba/2AHtHKiC1gOkoh2x6fB9lbP/xPcAY1ZQRmG+jOGAAAAAElFTkSuQmCC"/>Sobre nosotros</a>
+    <a class="About"  href="{% url 'home:about' %}" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQpJREFUSEvVlc8RATEYxX86oAI6QAXogA64cqATLpypgA7oABWgAx0wbycxEdmxWXaGnDbZL+/Pt8nbEgWPUsH4pBH0gTHQyCjgAMyAlV/vE5SBbQSwjyeiDnC1L3wCFdSBCzABND+/cVEzguSgavY0QwQCnBpwteahImOb5F6CRDIAltrnOrDqe8AmI6hf1gXWrguX4GaqKznUWyK162QmCXaI4NOja4X+DsEcGAILYGTsh9Zsm6Id2A1uS0NruQkKdxB7YqNb9FMEhd8De5OPNjC/edGURXtALoJZ9PRxIhovQCWw0lTPD/VpURGB/VIq8Hba/2AHtHKiC1gOkoh2x6fB9lbP/xPcAY1ZQRmG+jOGAAAAAElFTkSuQmCC"/>Sobre mi</a>
     <nav class="header-nav">
         {% if user.is_authenticated %}
-            <h3 class="d-flex align-items-center">Bienvenido {{ user.username }}
-                <img src="{% static 'home/img/avatares.png' %}" alt="avatar" style="height: 30px;" />
-                <div class="row">
-                    <div class="button-container">
-                        <a href="{% url 'home:logout' %}" class="btn btn-danger">Cerrar Sesion</a>
-                    </div>
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-3 text-end">
+                    <h3 class="d-flex align-items-center" style="margin-right: 10px;">Bienvenido {{ user.username }}</h3>
                 </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-end ml-auto">
+                        <img src="{% static 'img/avatares.png' %}" alt="avatar" style="height: 30px; margin-right: 10px;" />
+                        <div class="button-container">
+                            <a href="{% url 'home:profile' %}" class="btn btn-info">Perfil</a>
+                        </div>
+                        <div class="button-container">
+                            <a href="{% url 'home:logout' %}" class="btn btn-danger">Cerrar Sesión</a>
+                        </div>
+                        {% if user.is_staff %}
+                        <div class="button-container">
+                            <a href="{% url 'admin:index' %}" class="btn btn-outline-dark ml-3">Administración</a>
+                        </div>
+                        <div class="button-container">
+                            <a href="{% url 'home:register' %}" class="btn btn-outline-dark ml-3">Registrar nuevo vendedor</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% for message in messages %}
+                        <h6{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h6>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         {% else %}
             <a href={% url 'home:register' %}><i class='bi bi-user-plus' ></i>Crea tu Cuenta</a>
             <br>
             <a href="{% url 'home:login' %}">
                 <button type="button">Ingresar</button>
             </a>
-            <br>
-            <h6>{% if messages %}{{ messages }}{% endif %}</h6>
+            <br>      
+            {% for message in messages %}
+                <h6{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h6>
+            {% endfor %}
             </h3>
-        {% endif %}
-        {% if user.is_staff %}
-            <div class="row">
-                <div class="button-container">
-                    <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Administración</a>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="button-container">
-                    <a href="{% url 'home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
-                </div>
-            </div>
-            <br>
         {% endif %}
     </nav>
     <div>

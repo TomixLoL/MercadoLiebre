@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+    <div class="form-content text-center my-3 p-3">
+        <h2>Actualizar tu perfil</h2>
+    </div>
+    <div class="form-content text-center">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-md-5 mx-auto">
+                    <div class="form-group">
+                        <label class="large mb-1">Usuario:</label>
+                        <input class="form-control-lg" type="text" name="{{ user_form.username.name }}" id="{{ user_form.username.id_for_label }}" value="{{ user_form.username.value }}">
+                        <label class="small mb-1">Email:</label>
+                        <input class="form-control-lg" type="email" name="{{ user_form.email.name }}" id="{{ user_form.email.id_for_label }}" value="{{ user_form.email.value }}">
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-dark btn-lg">Guardar cambios</button>
+            <button type="reset" class="btn btn-dark btn-lg">Reiniciar</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

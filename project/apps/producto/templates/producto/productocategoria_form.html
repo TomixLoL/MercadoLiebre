@@ -5,14 +5,13 @@
 {% endblock title %}
 
 {% block content_producto %}
-    <form method="post">
+    <form method="post" action="{% url 'producto:productocategoria_create' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <div class="d-grid gap-3">
-            <button type="submi" class="btn btn-success">Guardar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
         </div>
     </form>
-
     {% url 'producto:index' as url %}
     {% include 'home/index_back.html' with link=url %}
 

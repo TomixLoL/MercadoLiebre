@@ -3,7 +3,7 @@ from django.contrib import admin
 from . import models
 
 admin.site.site_title = "Productos"
-admin.site.site_header = "La Caja de Pandora"
+admin.site.site_header = "MercadoLiebre"
 
 
 @admin.register(models.ProductoCategoria)

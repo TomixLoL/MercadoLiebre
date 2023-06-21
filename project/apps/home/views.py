@@ -1,13 +1,14 @@
-from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse, reverse_lazy
-from django.views.generic.edit import CreateView
+from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from producto.models import ProductoCategoria
-
-from . import forms, models
-from producto import models
+from django.contrib import messages
+from .forms import UpdateUserForm
+from . import forms
 
 
 def register(request: HttpRequest) -> HttpResponse:
@@ -15,7 +16,8 @@ def register(request: HttpRequest) -> HttpResponse:
         form = forms.CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, "home/index.html", {"messages": "Cuenta creada con exito 👌"})
+            messages.success(request, "Cuenta creada con exito 👌")
+            return redirect("home:index")
     else:
         form = forms.CustomUserCreationForm()
     return render(request, "home/register.html", {"form": form})
@@ -38,3 +40,18 @@ def index(request):
     }
 
     return render(request, "home/index.html", context)
+
+
+@login_required
+def profile(request):
+    if request.method == "POST":
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+
+        if user_form.is_valid():
+            user_form.save()
+            messages.success(request, "Cuenta actualizada con exito 👌")
+            return redirect("home:index")
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+
+    return render(request, "home/profile.html", {"user_form": user_form})

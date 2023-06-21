@@ -8,9 +8,9 @@
     <ul>
         <li>Nombre: {{ object.nombre }}</li>
         <li>Detalle: {{ object.descripcion }}</li>
+        <img src= "{{ object.imagen_categoria.url }}" alt="Imagen" width="500" height="500">
     </ul>
 
     {% url 'producto:index' as url %}
     {% include 'home/index_back.html' with link=url %}
-
 {% endblock content_producto %}

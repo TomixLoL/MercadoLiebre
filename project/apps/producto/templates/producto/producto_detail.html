@@ -12,6 +12,7 @@
         <li>Precio: {{ object.precio }}</li>
         <li>Descripción: {{ object.descripcion }}</li>
         <li>Fecha de actualización: {{ object.fecha_actualizacion }}</li>
+        <img src="{{ object.imagen_producto.url }}" alt="Imagen" width="500" height="500">
     </ul>
 
     {% url 'producto:index' as url %}

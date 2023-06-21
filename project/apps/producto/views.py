@@ -14,6 +14,7 @@ class ProductoCategoriaDetail(DetailView):
 
 class ProductoCategoriaList(ListView):
     model = models.ProductoCategoria
+    template_name = "productocategoria_list.html"
 
     def get_queryset(self):
         if self.request.GET.get("consulta"):
@@ -28,6 +29,11 @@ class ProductoCategoriaCreate(CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:index")
+    template_name = "producto/productocategoria_form.html"
+
+    def form_valid(self, form):
+        form.instance.imagen = self.request.FILES.get("imagen")
+        return super().form_valid(form)
 
 
 class ProductoCategoriaDelete(DeleteView):
@@ -57,10 +63,16 @@ class ProductoCreate(CreateView):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:index")
+    template_name = "producto/producto_form.html"
+
+    def form_valid(self, form):
+        form.instance.imagen = self.request.FILES.get("imagen")
+        return super().form_valid(form)
 
 
 class ProductoList(ListView):
     model = models.Producto
+    template_name = "producto_list.html"
 
     def get_queryset(self):
         if self.request.GET.get("consulta"):

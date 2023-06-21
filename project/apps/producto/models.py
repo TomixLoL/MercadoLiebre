@@ -7,6 +7,7 @@ class ProductoCategoria(models.Model):
 
     nombre = models.CharField(max_length=15, unique=True)
     descripcion = models.CharField(max_length=250, null=True, blank=True, verbose_name="descripción")
+    imagen_categoria = models.ImageField(upload_to="categoria/", verbose_name="imagen")
 
     class Meta:
         verbose_name = "categoría de productos"
@@ -27,6 +28,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     descripcion = models.CharField(max_length=250, blank=True, null=True, verbose_name="descripción")
     fecha_actualizacion = models.DateTimeField(default=timezone.now, editable=False, verbose_name="fecha de actualización")
+    imagen_producto = models.ImageField(upload_to="producto/", verbose_name="imagen")
 
     class Meta:
         verbose_name = "producto"
